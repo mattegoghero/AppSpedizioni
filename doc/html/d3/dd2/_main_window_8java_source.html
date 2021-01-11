@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>App Spedizioni:  File sorgente src/MainWindow.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">App Spedizioni
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Applicazione per gestire le spedizione per l&#39;esame di Programmazione a Oggetti 2020/2021</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Cerca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d3/dd2/_main_window_8java_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MainWindow.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/dd2/_main_window_8java.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> java.awt.CardLayout;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> java.awt.Container;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.awt.Dimension;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> java.awt.event.WindowEvent;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> java.awt.event.WindowListener;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> javax.swing.JFrame;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.swing.WindowConstants;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d8/d07/namespacedao.html">dao</a>.<a class="code" href="../../d3/dd0/classdao_1_1_dao_cliente.html">DaoCliente</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d8/d07/namespacedao.html">dao</a>.<a class="code" href="../../d5/d10/classdao_1_1_dao_spedizione.html">DaoSpedizione</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d9/da0/namespacedata.html">data</a>.<a class="code" href="../../d1/dac/classdata_1_1_cliente.html">Cliente</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d6/d56/namespacepanels.html">panels</a>.<a class="code" href="../../d3/d21/classpanels_1_1_login.html">Login</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d6/d56/namespacepanels.html">panels</a>.<a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">NuovaSpedizione</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d6/d56/namespacepanels.html">panels</a>.<a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html">Registrazione</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d6/d56/namespacepanels.html">panels</a>.<a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">SpedizioniAmministratore</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d6/d56/namespacepanels.html">panels</a>.<a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">SpedizioniCliente</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html">   27</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d9/dc6/class_main_window.html">MainWindow</a> <span class="keyword">extends</span> JFrame implements WindowListener {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">   29</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code" href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">LOGIN_PANEL</a> = <span class="stringliteral">&quot;LOGIN_PANEL&quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#ad9da320a91b1a8893b3317250c0e6cb3">   30</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code" href="../../d9/dc6/class_main_window.html#ad9da320a91b1a8893b3317250c0e6cb3">REGISTRAZIONE_PANEL</a> = <span class="stringliteral">&quot;REGISTRAZIONE_PANEL&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">   31</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code" href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">SPEDIZIONI_CLIENTE_PANEL</a> = <span class="stringliteral">&quot;SPEDIZIONI_CLIENTE_PANEL&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#ab098d6db45a0e99298b4e021f6f99cdb">   32</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code" href="../../d9/dc6/class_main_window.html#ab098d6db45a0e99298b4e021f6f99cdb">SPEDIZIONI_AMMINISTRATORE_PANEL</a> = <span class="stringliteral">&quot;SPEDIZIONI_AMMINISTRATORE_PANEL&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a7d9780bc43cd52c265ab8458660c57a1">   33</a></span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> String <a class="code" href="../../d9/dc6/class_main_window.html#a7d9780bc43cd52c265ab8458660c57a1">NUOVA_SPEDIZIONE</a> = <span class="stringliteral">&quot;NUOVA_SPEDIZIONE&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">   35</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d1/dac/classdata_1_1_cliente.html">Cliente</a> <a class="code" href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">cliente</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">   36</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">SpedizioniCliente</a> <a class="code" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">spedizioniCliente</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">   37</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">NuovaSpedizione</a> <a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">   39</a></span>&#160;    <span class="keyword">private</span> Container <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a4d78b197666e2d77663b2ae82844bb67">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a4d78b197666e2d77663b2ae82844bb67">main</a>(String[] args) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html">MainWindow</a> frame = <span class="keyword">new</span> <a class="code" href="../../d9/dc6/class_main_window.html#af607d50e4d1b04d3c494661489283f45">MainWindow</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        frame.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#af607d50e4d1b04d3c494661489283f45">   47</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d9/dc6/class_main_window.html#af607d50e4d1b04d3c494661489283f45">MainWindow</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        super(<span class="stringliteral">&quot;Gestore spedizioni&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a> = getContentPane();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        setMinimumSize(<span class="keyword">new</span> Dimension(800,600));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        setSize(1080,720);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        setLocationRelativeTo(<span class="keyword">null</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.setLayout(<span class="keyword">new</span> CardLayout(0, 0));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d3/d21/classpanels_1_1_login.html">Login</a> loginSelect = <span class="keyword">new</span> <a class="code" href="../../d3/d21/classpanels_1_1_login.html">Login</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.add(loginSelect, <a class="code" href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">LOGIN_PANEL</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        loginSelect.<a class="code" href="../../d3/d21/classpanels_1_1_login.html#a0c437446544d5a57b057988f8266a241">setListener</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a1dad4736d236fb4f3798e04c32d5d56e">loginListener</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html">Registrazione</a> registrazione = <span class="keyword">new</span> <a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html">Registrazione</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.add(registrazione, <a class="code" href="../../d9/dc6/class_main_window.html#ad9da320a91b1a8893b3317250c0e6cb3">REGISTRAZIONE_PANEL</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        registrazione.<a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html#ad81527ae55b6c68c824a2f403b1ccb84">setListener</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a7ae6cf30a14fc5f855732426677ac2c6">registrazioneListener</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">spedizioniCliente</a> = <span class="keyword">new</span> <a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">SpedizioniCliente</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">spedizioniCliente</a>.<a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html#a4a5af221ba6d4baee2692d5891f7586a">setListener</a>(<a class="code" href="../../d9/dc6/class_main_window.html#aadddb5ddd6bea0523cf17420c55604e4">spedizioniListener</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.add(<a class="code" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">spedizioniCliente</a>, <a class="code" href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">SPEDIZIONI_CLIENTE_PANEL</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">SpedizioniAmministratore</a> spedizioniAmministratore = <span class="keyword">new</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">SpedizioniAmministratore</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        spedizioniAmministratore.<a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a88abcf3325c2e0a10a45b83e02452e1b">setListener</a>(<a class="code" href="../../d9/dc6/class_main_window.html#aadddb5ddd6bea0523cf17420c55604e4">spedizioniListener</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.add(spedizioniAmministratore, <a class="code" href="../../d9/dc6/class_main_window.html#ab098d6db45a0e99298b4e021f6f99cdb">SPEDIZIONI_AMMINISTRATORE_PANEL</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">NuovaSpedizione</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a>.<a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a01f304fc5bb2b2c2e58c8e7f2ea2b3ec">setListener</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a24dc5a7dd7d338c90546b7cdfe41df9a">nuovaSpedizioneListener</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.add(<a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a>, <a class="code" href="../../d9/dc6/class_main_window.html#a7d9780bc43cd52c265ab8458660c57a1">NUOVA_SPEDIZIONE</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        addWindowListener(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">   85</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(String panelName) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ((CardLayout)<a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>.getLayout()).show(<a class="code" href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">contentPanel</a>, panelName);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a1dad4736d236fb4f3798e04c32d5d56e">   97</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d3/d21/classpanels_1_1_login.html">Login</a>.<a class="code" href="../../d7/ddd/interfacepanels_1_1_login_1_1_login_listener.html">LoginListener</a> <a class="code" href="../../d9/dc6/class_main_window.html#a1dad4736d236fb4f3798e04c32d5d56e">loginListener</a> = <span class="keyword">new</span> <a class="code" href="../../d3/d21/classpanels_1_1_login.html">Login</a>.<a class="code" href="../../d7/ddd/interfacepanels_1_1_login_1_1_login_listener.html">LoginListener</a>() {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        @Override</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_registrazioneRichiesta() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#ad9da320a91b1a8893b3317250c0e6cb3">REGISTRAZIONE_PANEL</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        @Override</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_loginCliente(<a class="code" href="../../d1/dac/classdata_1_1_cliente.html">Cliente</a> c) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">cliente</a> = c;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">spedizioniCliente</a>.<a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html#a8f87c539407817f1d3418256d01049b6">setUsername</a>(c.<a class="code" href="../../d1/dac/classdata_1_1_cliente.html#afafe701e9a7b3babae23ce3eaf318697">getUsername</a>());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">SPEDIZIONI_CLIENTE_PANEL</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        @Override</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_loginAmministratore() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#ab098d6db45a0e99298b4e021f6f99cdb">SPEDIZIONI_AMMINISTRATORE_PANEL</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a7ae6cf30a14fc5f855732426677ac2c6">  120</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html">Registrazione</a>.<a class="code" href="../../df/dfa/interfacepanels_1_1_registrazione_1_1_registrazione_listener.html">RegistrazioneListener</a> <a class="code" href="../../d9/dc6/class_main_window.html#a7ae6cf30a14fc5f855732426677ac2c6">registrazioneListener</a> = <span class="keyword">new</span> <a class="code" href="../../d3/d49/classpanels_1_1_registrazione.html">Registrazione</a>.<a class="code" href="../../df/dfa/interfacepanels_1_1_registrazione_1_1_registrazione_listener.html">RegistrazioneListener</a>() {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        @Override</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_exit() {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">LOGIN_PANEL</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#aadddb5ddd6bea0523cf17420c55604e4">  137</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">SpedizioniCliente</a>.<a class="code" href="../../d6/dc4/interfacepanels_1_1_spedizioni_cliente_1_1_spedizioni_cliente_listener.html">SpedizioniClienteListener</a> <a class="code" href="../../d9/dc6/class_main_window.html#aadddb5ddd6bea0523cf17420c55604e4">spedizioniListener</a> = <span class="keyword">new</span> <a class="code" href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">SpedizioniCliente</a>.<a class="code" href="../../d6/dc4/interfacepanels_1_1_spedizioni_cliente_1_1_spedizioni_cliente_listener.html">SpedizioniClienteListener</a>() {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        @Override</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_nuovaSpedizione() {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a>.<a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a3f7e285b721b0526fd243dafd66d7a69">setUsername</a>(<a class="code" href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">cliente</a>.<a class="code" href="../../d1/dac/classdata_1_1_cliente.html#afafe701e9a7b3babae23ce3eaf318697">getUsername</a>());</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">nuovaSpedizione</a>.<a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a3eea8af3b89d5bf65d438eed8ab42f7a">setIndirizzo</a>(<a class="code" href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">cliente</a>.<a class="code" href="../../d1/dac/classdata_1_1_cliente.html#a74c5ca0ed7e55e78df93a36675339fdb">getIndirizzo</a>());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a7d9780bc43cd52c265ab8458660c57a1">NUOVA_SPEDIZIONE</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        @Override</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_logout() {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">LOGIN_PANEL</a>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    };</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a24dc5a7dd7d338c90546b7cdfe41df9a">  155</a></span>&#160;    <span class="keyword">private</span> <a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">NuovaSpedizione</a>.<a class="code" href="../../df/d8c/interfacepanels_1_1_nuova_spedizione_1_1_nuova_spedizione_listener.html">NuovaSpedizioneListener</a> <a class="code" href="../../d9/dc6/class_main_window.html#a24dc5a7dd7d338c90546b7cdfe41df9a">nuovaSpedizioneListener</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">NuovaSpedizione</a>.<a class="code" href="../../df/d8c/interfacepanels_1_1_nuova_spedizione_1_1_nuova_spedizione_listener.html">NuovaSpedizioneListener</a>() {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        @Override</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> on_exit() {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">switchToPanel</a>(<a class="code" href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">SPEDIZIONI_CLIENTE_PANEL</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    };</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    @Override</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#aa2bbb10869639a776d6718a5c53feb1a">  169</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#aa2bbb10869639a776d6718a5c53feb1a">windowClosing</a>(WindowEvent e) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="../../d3/dd0/classdao_1_1_dao_cliente.html">DaoCliente</a>.<a class="code" href="../../d3/dd0/classdao_1_1_dao_cliente.html#a524cf63896657118891493b2a28667ae">getInstance</a>().<a class="code" href="../../da/d92/classdao_1_1_dao.html#a949376a335599302a6160a40b07561df">saveChanges</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="../../d5/d10/classdao_1_1_dao_spedizione.html">DaoSpedizione</a>.<a class="code" href="../../d5/d10/classdao_1_1_dao_spedizione.html#a0788c44a2b56cbe5f394687cc038eb02">getInstance</a>().<a class="code" href="../../da/d92/classdao_1_1_dao.html#a949376a335599302a6160a40b07561df">saveChanges</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    @Override</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a3f154561fcfdecf23a41f96bb7986147">  175</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a3f154561fcfdecf23a41f96bb7986147">windowOpened</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    @Override</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#aa0042e8f90d92c6bb1387a5652b5dff2">  177</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#aa0042e8f90d92c6bb1387a5652b5dff2">windowClosed</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    @Override</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a691fc29db31463ae90cc54c700d08a31">  179</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a691fc29db31463ae90cc54c700d08a31">windowIconified</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    @Override</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#ae0418bb86202806c2d48f0855dba3e66">  181</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#ae0418bb86202806c2d48f0855dba3e66">windowDeiconified</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    @Override</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a95fb999c0aa054aced1ca03322ffdee2">  183</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a95fb999c0aa054aced1ca03322ffdee2">windowActivated</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    @Override</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d9/dc6/class_main_window.html#a48c630ae104f63c16c2a424bf01fab3e">  185</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a48c630ae104f63c16c2a424bf01fab3e">windowDeactivated</a>(WindowEvent e) {}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="../../d9/dc6/class_main_window.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00027">MainWindow.java:27</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1dad4736d236fb4f3798e04c32d5d56e"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a1dad4736d236fb4f3798e04c32d5d56e">MainWindow.loginListener</a></div><div class="ttdeci">Login.LoginListener loginListener</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00097">MainWindow.java:97</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a24dc5a7dd7d338c90546b7cdfe41df9a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a24dc5a7dd7d338c90546b7cdfe41df9a">MainWindow.nuovaSpedizioneListener</a></div><div class="ttdeci">NuovaSpedizione.NuovaSpedizioneListener nuovaSpedizioneListener</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00155">MainWindow.java:155</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3f154561fcfdecf23a41f96bb7986147"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a3f154561fcfdecf23a41f96bb7986147">MainWindow.windowOpened</a></div><div class="ttdeci">void windowOpened(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00175">MainWindow.java:175</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a42416fe6f8d05fb0650a2b655bf490cc"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a42416fe6f8d05fb0650a2b655bf490cc">MainWindow.contentPanel</a></div><div class="ttdeci">Container contentPanel</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00039">MainWindow.java:39</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a48c630ae104f63c16c2a424bf01fab3e"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a48c630ae104f63c16c2a424bf01fab3e">MainWindow.windowDeactivated</a></div><div class="ttdeci">void windowDeactivated(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00185">MainWindow.java:185</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4d78b197666e2d77663b2ae82844bb67"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a4d78b197666e2d77663b2ae82844bb67">MainWindow.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00041">MainWindow.java:41</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a58d97f8fe742eb029fb15e098e10087e"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a58d97f8fe742eb029fb15e098e10087e">MainWindow.spedizioniCliente</a></div><div class="ttdeci">SpedizioniCliente spedizioniCliente</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00036">MainWindow.java:36</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a63aa9164f7cb7dbc503934347a33551c"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a63aa9164f7cb7dbc503934347a33551c">MainWindow.SPEDIZIONI_CLIENTE_PANEL</a></div><div class="ttdeci">final String SPEDIZIONI_CLIENTE_PANEL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00031">MainWindow.java:31</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a6649ef8ac64e921930d3eb22f81e8a5a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a6649ef8ac64e921930d3eb22f81e8a5a">MainWindow.switchToPanel</a></div><div class="ttdeci">void switchToPanel(String panelName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00085">MainWindow.java:85</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a68a2f054fd75c9e9afe0eb811ef111e7"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a68a2f054fd75c9e9afe0eb811ef111e7">MainWindow.LOGIN_PANEL</a></div><div class="ttdeci">final String LOGIN_PANEL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00029">MainWindow.java:29</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a691fc29db31463ae90cc54c700d08a31"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a691fc29db31463ae90cc54c700d08a31">MainWindow.windowIconified</a></div><div class="ttdeci">void windowIconified(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00179">MainWindow.java:179</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7ae6cf30a14fc5f855732426677ac2c6"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a7ae6cf30a14fc5f855732426677ac2c6">MainWindow.registrazioneListener</a></div><div class="ttdeci">Registrazione.RegistrazioneListener registrazioneListener</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00120">MainWindow.java:120</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7d9780bc43cd52c265ab8458660c57a1"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a7d9780bc43cd52c265ab8458660c57a1">MainWindow.NUOVA_SPEDIZIONE</a></div><div class="ttdeci">final String NUOVA_SPEDIZIONE</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00033">MainWindow.java:33</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a95fb999c0aa054aced1ca03322ffdee2"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#a95fb999c0aa054aced1ca03322ffdee2">MainWindow.windowActivated</a></div><div class="ttdeci">void windowActivated(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00183">MainWindow.java:183</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa0042e8f90d92c6bb1387a5652b5dff2"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aa0042e8f90d92c6bb1387a5652b5dff2">MainWindow.windowClosed</a></div><div class="ttdeci">void windowClosed(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00177">MainWindow.java:177</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa2bbb10869639a776d6718a5c53feb1a"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aa2bbb10869639a776d6718a5c53feb1a">MainWindow.windowClosing</a></div><div class="ttdeci">void windowClosing(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00169">MainWindow.java:169</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aadddb5ddd6bea0523cf17420c55604e4"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aadddb5ddd6bea0523cf17420c55604e4">MainWindow.spedizioniListener</a></div><div class="ttdeci">SpedizioniCliente.SpedizioniClienteListener spedizioniListener</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00137">MainWindow.java:137</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aaf82083fcdbc5550124a8062b5347fe4"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aaf82083fcdbc5550124a8062b5347fe4">MainWindow.nuovaSpedizione</a></div><div class="ttdeci">NuovaSpedizione nuovaSpedizione</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00037">MainWindow.java:37</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ab098d6db45a0e99298b4e021f6f99cdb"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#ab098d6db45a0e99298b4e021f6f99cdb">MainWindow.SPEDIZIONI_AMMINISTRATORE_PANEL</a></div><div class="ttdeci">final String SPEDIZIONI_AMMINISTRATORE_PANEL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00032">MainWindow.java:32</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ad9da320a91b1a8893b3317250c0e6cb3"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#ad9da320a91b1a8893b3317250c0e6cb3">MainWindow.REGISTRAZIONE_PANEL</a></div><div class="ttdeci">final String REGISTRAZIONE_PANEL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00030">MainWindow.java:30</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae0418bb86202806c2d48f0855dba3e66"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#ae0418bb86202806c2d48f0855dba3e66">MainWindow.windowDeiconified</a></div><div class="ttdeci">void windowDeiconified(WindowEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00181">MainWindow.java:181</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aed4f8dd32108229a5067173d97de4957"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#aed4f8dd32108229a5067173d97de4957">MainWindow.cliente</a></div><div class="ttdeci">Cliente cliente</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00035">MainWindow.java:35</a></div></div>
+<div class="ttc" id="aclass_main_window_html_af607d50e4d1b04d3c494661489283f45"><div class="ttname"><a href="../../d9/dc6/class_main_window.html#af607d50e4d1b04d3c494661489283f45">MainWindow.MainWindow</a></div><div class="ttdeci">MainWindow()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dd2/_main_window_8java_source.html#l00047">MainWindow.java:47</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_cliente_html"><div class="ttname"><a href="../../d3/dd0/classdao_1_1_dao_cliente.html">dao.DaoCliente</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d39/_dao_cliente_8java_source.html#l00012">DaoCliente.java:12</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_cliente_html_a524cf63896657118891493b2a28667ae"><div class="ttname"><a href="../../d3/dd0/classdao_1_1_dao_cliente.html#a524cf63896657118891493b2a28667ae">dao.DaoCliente.getInstance</a></div><div class="ttdeci">static DaoCliente getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d39/_dao_cliente_8java_source.html#l00019">DaoCliente.java:19</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_html_a949376a335599302a6160a40b07561df"><div class="ttname"><a href="../../da/d92/classdao_1_1_dao.html#a949376a335599302a6160a40b07561df">dao.Dao.saveChanges</a></div><div class="ttdeci">boolean saveChanges()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d1c/_dao_8java_source.html#l00067">Dao.java:67</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_spedizione_html"><div class="ttname"><a href="../../d5/d10/classdao_1_1_dao_spedizione.html">dao.DaoSpedizione</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0b/_dao_spedizione_8java_source.html#l00016">DaoSpedizione.java:16</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_spedizione_html_a0788c44a2b56cbe5f394687cc038eb02"><div class="ttname"><a href="../../d5/d10/classdao_1_1_dao_spedizione.html#a0788c44a2b56cbe5f394687cc038eb02">dao.DaoSpedizione.getInstance</a></div><div class="ttdeci">static DaoSpedizione getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0b/_dao_spedizione_8java_source.html#l00023">DaoSpedizione.java:23</a></div></div>
+<div class="ttc" id="aclassdata_1_1_cliente_html"><div class="ttname"><a href="../../d1/dac/classdata_1_1_cliente.html">data.Cliente</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d15/_cliente_8java_source.html#l00011">Cliente.java:11</a></div></div>
+<div class="ttc" id="aclassdata_1_1_cliente_html_a74c5ca0ed7e55e78df93a36675339fdb"><div class="ttname"><a href="../../d1/dac/classdata_1_1_cliente.html#a74c5ca0ed7e55e78df93a36675339fdb">data.Cliente.getIndirizzo</a></div><div class="ttdeci">String getIndirizzo()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d15/_cliente_8java_source.html#l00039">Cliente.java:39</a></div></div>
+<div class="ttc" id="aclassdata_1_1_cliente_html_afafe701e9a7b3babae23ce3eaf318697"><div class="ttname"><a href="../../d1/dac/classdata_1_1_cliente.html#afafe701e9a7b3babae23ce3eaf318697">data.Cliente.getUsername</a></div><div class="ttdeci">String getUsername()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d15/_cliente_8java_source.html#l00023">Cliente.java:23</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_login_html"><div class="ttname"><a href="../../d3/d21/classpanels_1_1_login.html">panels.Login</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d7f/_login_8java_source.html#l00036">Login.java:36</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_login_html_a0c437446544d5a57b057988f8266a241"><div class="ttname"><a href="../../d3/d21/classpanels_1_1_login.html#a0c437446544d5a57b057988f8266a241">panels.Login.setListener</a></div><div class="ttdeci">void setListener(LoginListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d7f/_login_8java_source.html#l00227">Login.java:227</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_nuova_spedizione_html"><div class="ttname"><a href="../../dd/d75/classpanels_1_1_nuova_spedizione.html">panels.NuovaSpedizione</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d01/_nuova_spedizione_8java_source.html#l00043">NuovaSpedizione.java:43</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_nuova_spedizione_html_a01f304fc5bb2b2c2e58c8e7f2ea2b3ec"><div class="ttname"><a href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a01f304fc5bb2b2c2e58c8e7f2ea2b3ec">panels.NuovaSpedizione.setListener</a></div><div class="ttdeci">void setListener(NuovaSpedizioneListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d01/_nuova_spedizione_8java_source.html#l00338">NuovaSpedizione.java:338</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_nuova_spedizione_html_a3eea8af3b89d5bf65d438eed8ab42f7a"><div class="ttname"><a href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a3eea8af3b89d5bf65d438eed8ab42f7a">panels.NuovaSpedizione.setIndirizzo</a></div><div class="ttdeci">void setIndirizzo(String indirizzo)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d01/_nuova_spedizione_8java_source.html#l00334">NuovaSpedizione.java:334</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_nuova_spedizione_html_a3f7e285b721b0526fd243dafd66d7a69"><div class="ttname"><a href="../../dd/d75/classpanels_1_1_nuova_spedizione.html#a3f7e285b721b0526fd243dafd66d7a69">panels.NuovaSpedizione.setUsername</a></div><div class="ttdeci">void setUsername(String username)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d01/_nuova_spedizione_8java_source.html#l00330">NuovaSpedizione.java:330</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_registrazione_html"><div class="ttname"><a href="../../d3/d49/classpanels_1_1_registrazione.html">panels.Registrazione</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d1e/_registrazione_8java_source.html#l00034">Registrazione.java:34</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_registrazione_html_ad81527ae55b6c68c824a2f403b1ccb84"><div class="ttname"><a href="../../d3/d49/classpanels_1_1_registrazione.html#ad81527ae55b6c68c824a2f403b1ccb84">panels.Registrazione.setListener</a></div><div class="ttdeci">void setListener(RegistrazioneListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d1e/_registrazione_8java_source.html#l00246">Registrazione.java:246</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">panels.SpedizioniAmministratore</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00022">SpedizioniAmministratore.java:22</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_cliente_html"><div class="ttname"><a href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html">panels.SpedizioniCliente</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfb/_spedizioni_cliente_8java_source.html#l00027">SpedizioniCliente.java:27</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_cliente_html_a4a5af221ba6d4baee2692d5891f7586a"><div class="ttname"><a href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html#a4a5af221ba6d4baee2692d5891f7586a">panels.SpedizioniCliente.setListener</a></div><div class="ttdeci">void setListener(SpedizioniClienteListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfb/_spedizioni_cliente_8java_source.html#l00102">SpedizioniCliente.java:102</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_cliente_html_a8f87c539407817f1d3418256d01049b6"><div class="ttname"><a href="../../d3/dba/classpanels_1_1_spedizioni_cliente.html#a8f87c539407817f1d3418256d01049b6">panels.SpedizioniCliente.setUsername</a></div><div class="ttdeci">void setUsername(String username)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfb/_spedizioni_cliente_8java_source.html#l00098">SpedizioniCliente.java:98</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_html_a88abcf3325c2e0a10a45b83e02452e1b"><div class="ttname"><a href="../../dc/d33/classpanels_1_1_spedizioni.html#a88abcf3325c2e0a10a45b83e02452e1b">panels.Spedizioni.setListener</a></div><div class="ttdeci">void setListener(SpedizioniListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d13/_spedizioni_8java_source.html#l00113">Spedizioni.java:113</a></div></div>
+<div class="ttc" id="ainterfacepanels_1_1_login_1_1_login_listener_html"><div class="ttname"><a href="../../d7/ddd/interfacepanels_1_1_login_1_1_login_listener.html">panels.Login.LoginListener</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d7f/_login_8java_source.html#l00243">Login.java:243</a></div></div>
+<div class="ttc" id="ainterfacepanels_1_1_nuova_spedizione_1_1_nuova_spedizione_listener_html"><div class="ttname"><a href="../../df/d8c/interfacepanels_1_1_nuova_spedizione_1_1_nuova_spedizione_listener.html">panels.NuovaSpedizione.NuovaSpedizioneListener</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d01/_nuova_spedizione_8java_source.html#l00345">NuovaSpedizione.java:345</a></div></div>
+<div class="ttc" id="ainterfacepanels_1_1_registrazione_1_1_registrazione_listener_html"><div class="ttname"><a href="../../df/dfa/interfacepanels_1_1_registrazione_1_1_registrazione_listener.html">panels.Registrazione.RegistrazioneListener</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d1e/_registrazione_8java_source.html#l00254">Registrazione.java:254</a></div></div>
+<div class="ttc" id="ainterfacepanels_1_1_spedizioni_cliente_1_1_spedizioni_cliente_listener_html"><div class="ttname"><a href="../../d6/dc4/interfacepanels_1_1_spedizioni_cliente_1_1_spedizioni_cliente_listener.html">panels.SpedizioniCliente.SpedizioniClienteListener</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfb/_spedizioni_cliente_8java_source.html#l00121">SpedizioniCliente.java:121</a></div></div>
+<div class="ttc" id="anamespacedao_html"><div class="ttname"><a href="../../d8/d07/namespacedao.html">dao</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d1c/_dao_8java_source.html#l00001">Dao.java:1</a></div></div>
+<div class="ttc" id="anamespacedata_html"><div class="ttname"><a href="../../d9/da0/namespacedata.html">data</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d15/_cliente_8java_source.html#l00001">Cliente.java:1</a></div></div>
+<div class="ttc" id="anamespacepanels_html"><div class="ttname"><a href="../../d6/d56/namespacepanels.html">panels</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d7f/_login_8java_source.html#l00001">Login.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d3/dd2/_main_window_8java.html">MainWindow.java</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>

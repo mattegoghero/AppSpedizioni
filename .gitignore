@@ -1,0 +1,6 @@
+*.class
+.settings
+*.dat
+.classpath
+.project
+Doxyfile

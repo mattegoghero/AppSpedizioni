@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>App Spedizioni:  File sorgente src/panels/SpedizioniAmministratore.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">App Spedizioni
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Applicazione per gestire le spedizione per l&#39;esame di Programmazione a Oggetti 2020/2021</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Cerca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d4/d6d/_spedizioni_amministratore_8java_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">SpedizioniAmministratore.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d6d/_spedizioni_amministratore_8java.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>panels;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> java.awt.event.ActionEvent;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.awt.event.ActionListener;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> java.awt.event.ComponentAdapter;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> java.awt.event.ComponentEvent;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> java.awt.event.MouseEvent;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> javax.swing.JMenuItem;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> javax.swing.JPopupMenu;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.swing.SwingUtilities;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d9/da0/namespacedata.html">data</a>.<a class="code" href="../../d2/d73/classdata_1_1_spedizione.html">Spedizione</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d9/da0/namespacedata.html">data</a>.<a class="code" href="../../d6/d38/enumdata_1_1_stato_spedizione.html">StatoSpedizione</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d9/da8/namespacetablemodels.html">tablemodels</a>.<a class="code" href="../../d9/d57/classtablemodels_1_1_spedizioni_amministratore_table_model.html">SpedizioniAmministratoreTableModel</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> <a class="code" href="../../d5/d58/namespacethreads.html">threads</a>.<a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html">UpdateSpedizioniThread</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">   22</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">SpedizioniAmministratore</a> <span class="keyword">extends</span> <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html">Spedizioni</a> implements <a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html">UpdateSpedizioniThread</a>.UpdateSpedizioniThreadListener {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    JPopupMenu popupMenu;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html">UpdateSpedizioniThread</a> updateThread;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac3b0b55af347837db215b20128f69a19">   28</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac3b0b55af347837db215b20128f69a19">SpedizioniAmministratore</a>(){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        super(<span class="keyword">new</span> <a class="code" href="../../d9/d57/classtablemodels_1_1_spedizioni_amministratore_table_model.html">SpedizioniAmministratoreTableModel</a>());</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        popupMenu = <span class="keyword">new</span> JPopupMenu();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        JMenuItem menuItem_cancella = <span class="keyword">new</span> JMenuItem(<span class="stringliteral">&quot;Cancella&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        popupMenu.add(menuItem_cancella);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        addComponentListener (<span class="keyword">new</span> ComponentAdapter () {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            @Override</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> componentShown ( ComponentEvent e ){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">updateTableData</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a67f7680a1b1ce6556f4e108714ab87be">startUpdateThread</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            @Override</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> componentHidden ( ComponentEvent e ){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aef9f6121e920193d408a2d2dc5f9050f">stopUpdateThread</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        });</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        menuItem_cancella.addActionListener(<span class="keyword">new</span> ActionListener() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            @Override</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> actionPerformed(ActionEvent e) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a1c77ec5c522e5daf63ef9eab25e1216b">deleteSelectedSpedizione</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        });</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a67f7680a1b1ce6556f4e108714ab87be">   58</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a67f7680a1b1ce6556f4e108714ab87be">startUpdateThread</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        updateThread = <span class="keyword">new</span> <a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html">UpdateSpedizioniThread</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        updateThread.<a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html#a5687842dfb2a03d25b8369463cc632f2">setListener</a>(<a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">SpedizioniAmministratore</a>.this);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        updateThread.start();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aef9f6121e920193d408a2d2dc5f9050f">   67</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aef9f6121e920193d408a2d2dc5f9050f">stopUpdateThread</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (updateThread != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            updateThread.<a class="code" href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html#a99d5823778a7e70326823e18aaacf418">terminate</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a1c77ec5c522e5daf63ef9eab25e1216b">   75</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a1c77ec5c522e5daf63ef9eab25e1216b">deleteSelectedSpedizione</a>() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="../../d2/d73/classdata_1_1_spedizione.html">Spedizione</a> sped = <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a8303525b7537c18f692a4b627edf475c">model</a>.<a class="code" href="../../df/d6b/classtablemodels_1_1_spedizioni_table_model.html#a4bcb16d37dc8bb867fd46000a0321796">getData</a>().get(<a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a81c5616ed6f954e75b674c4c3e6d59c5">table_spedizioni</a>.getSelectedRow());   </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#ae7f709656f4578a7e623af4d095a29b2">daoSpedizione</a>.<a class="code" href="../../d5/d10/classdao_1_1_dao_spedizione.html#a522ce04e5b9db12ab5df5774bf0d8ca5">deleteSpedizione</a>(sped.<a class="code" href="../../d2/d73/classdata_1_1_spedizione.html#a0e0ca5eabb7c71cab47e6b4de069be64">getCodice</a>());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">updateTableData</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">   84</a></span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">updateTableData</a>() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a8303525b7537c18f692a4b627edf475c">model</a>.<a class="code" href="../../df/d6b/classtablemodels_1_1_spedizioni_table_model.html#a6b40ba354a2ce735cca3eab363cd76d9">setData</a>(<a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#ae7f709656f4578a7e623af4d095a29b2">daoSpedizione</a>.<a class="code" href="../../d5/d10/classdao_1_1_dao_spedizione.html#a8845dacd5b5516d26400d1333aa45c62">getAllSpedizioni</a>());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a8303525b7537c18f692a4b627edf475c">model</a>.fireTableDataChanged();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    @Override</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aa6850e2fe1d1d7b809621d83a9f8300f">   94</a></span>&#160;    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aa6850e2fe1d1d7b809621d83a9f8300f">onTableClick</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column, MouseEvent evt) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (SwingUtilities.isRightMouseButton(evt)) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a81c5616ed6f954e75b674c4c3e6d59c5">table_spedizioni</a>.setRowSelectionInterval(row, row);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="../../d2/d73/classdata_1_1_spedizione.html">Spedizione</a> sped = <a class="code" href="../../dc/d33/classpanels_1_1_spedizioni.html#a8303525b7537c18f692a4b627edf475c">model</a>.<a class="code" href="../../df/d6b/classtablemodels_1_1_spedizioni_table_model.html#a4bcb16d37dc8bb867fd46000a0321796">getData</a>().get(row);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="../../d6/d38/enumdata_1_1_stato_spedizione.html">StatoSpedizione</a> stato = sped.<a class="code" href="../../d2/d73/classdata_1_1_spedizione.html#a02da9b71691a82a377137a2fac25d17c">getStato</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (stato == <a class="code" href="../../d6/d38/enumdata_1_1_stato_spedizione.html">StatoSpedizione</a>.RICEVUTA || stato == <a class="code" href="../../d6/d38/enumdata_1_1_stato_spedizione.html">StatoSpedizione</a>.RIMBORSO_EROGATO) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                popupMenu.show(evt.getComponent(), evt.getX(), evt.getY());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }   </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    @Override</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac5e23fa62b6a7c7f5a29210d5ac55e6f">  110</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac5e23fa62b6a7c7f5a29210d5ac55e6f">on_spedizioneUpdated</a>() {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">updateTableData</a>();      </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="ttc" id="aclassdao_1_1_dao_spedizione_html_a522ce04e5b9db12ab5df5774bf0d8ca5"><div class="ttname"><a href="../../d5/d10/classdao_1_1_dao_spedizione.html#a522ce04e5b9db12ab5df5774bf0d8ca5">dao.DaoSpedizione.deleteSpedizione</a></div><div class="ttdeci">boolean deleteSpedizione(String codice)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0b/_dao_spedizione_8java_source.html#l00061">DaoSpedizione.java:61</a></div></div>
+<div class="ttc" id="aclassdao_1_1_dao_spedizione_html_a8845dacd5b5516d26400d1333aa45c62"><div class="ttname"><a href="../../d5/d10/classdao_1_1_dao_spedizione.html#a8845dacd5b5516d26400d1333aa45c62">dao.DaoSpedizione.getAllSpedizioni</a></div><div class="ttdeci">Vector&lt; Spedizione &gt; getAllSpedizioni()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0b/_dao_spedizione_8java_source.html#l00086">DaoSpedizione.java:86</a></div></div>
+<div class="ttc" id="aclassdata_1_1_spedizione_html"><div class="ttname"><a href="../../d2/d73/classdata_1_1_spedizione.html">data.Spedizione</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db9/_spedizione_8java_source.html#l00012">Spedizione.java:12</a></div></div>
+<div class="ttc" id="aclassdata_1_1_spedizione_html_a02da9b71691a82a377137a2fac25d17c"><div class="ttname"><a href="../../d2/d73/classdata_1_1_spedizione.html#a02da9b71691a82a377137a2fac25d17c">data.Spedizione.getStato</a></div><div class="ttdeci">StatoSpedizione getStato()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db9/_spedizione_8java_source.html#l00059">Spedizione.java:59</a></div></div>
+<div class="ttc" id="aclassdata_1_1_spedizione_html_a0e0ca5eabb7c71cab47e6b4de069be64"><div class="ttname"><a href="../../d2/d73/classdata_1_1_spedizione.html#a0e0ca5eabb7c71cab47e6b4de069be64">data.Spedizione.getCodice</a></div><div class="ttdeci">String getCodice()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db9/_spedizione_8java_source.html#l00030">Spedizione.java:30</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html">panels.SpedizioniAmministratore</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00022">SpedizioniAmministratore.java:22</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_a1c77ec5c522e5daf63ef9eab25e1216b"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a1c77ec5c522e5daf63ef9eab25e1216b">panels.SpedizioniAmministratore.deleteSelectedSpedizione</a></div><div class="ttdeci">void deleteSelectedSpedizione()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00075">SpedizioniAmministratore.java:75</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_a67f7680a1b1ce6556f4e108714ab87be"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a67f7680a1b1ce6556f4e108714ab87be">panels.SpedizioniAmministratore.startUpdateThread</a></div><div class="ttdeci">void startUpdateThread()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00058">SpedizioniAmministratore.java:58</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_a9edc637d91dbc6033c849911c1ad17a6"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#a9edc637d91dbc6033c849911c1ad17a6">panels.SpedizioniAmministratore.updateTableData</a></div><div class="ttdeci">void updateTableData()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00084">SpedizioniAmministratore.java:84</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_aa6850e2fe1d1d7b809621d83a9f8300f"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aa6850e2fe1d1d7b809621d83a9f8300f">panels.SpedizioniAmministratore.onTableClick</a></div><div class="ttdeci">void onTableClick(int row, int column, MouseEvent evt)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00094">SpedizioniAmministratore.java:94</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_ac3b0b55af347837db215b20128f69a19"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac3b0b55af347837db215b20128f69a19">panels.SpedizioniAmministratore.SpedizioniAmministratore</a></div><div class="ttdeci">SpedizioniAmministratore()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00028">SpedizioniAmministratore.java:28</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_ac5e23fa62b6a7c7f5a29210d5ac55e6f"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#ac5e23fa62b6a7c7f5a29210d5ac55e6f">panels.SpedizioniAmministratore.on_spedizioneUpdated</a></div><div class="ttdeci">void on_spedizioneUpdated()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00110">SpedizioniAmministratore.java:110</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_amministratore_html_aef9f6121e920193d408a2d2dc5f9050f"><div class="ttname"><a href="../../df/d93/classpanels_1_1_spedizioni_amministratore.html#aef9f6121e920193d408a2d2dc5f9050f">panels.SpedizioniAmministratore.stopUpdateThread</a></div><div class="ttdeci">void stopUpdateThread()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d6d/_spedizioni_amministratore_8java_source.html#l00067">SpedizioniAmministratore.java:67</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_html"><div class="ttname"><a href="../../dc/d33/classpanels_1_1_spedizioni.html">panels.Spedizioni</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d13/_spedizioni_8java_source.html#l00036">Spedizioni.java:36</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_html_a81c5616ed6f954e75b674c4c3e6d59c5"><div class="ttname"><a href="../../dc/d33/classpanels_1_1_spedizioni.html#a81c5616ed6f954e75b674c4c3e6d59c5">panels.Spedizioni.table_spedizioni</a></div><div class="ttdeci">JTable table_spedizioni</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d13/_spedizioni_8java_source.html#l00039">Spedizioni.java:39</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_html_a8303525b7537c18f692a4b627edf475c"><div class="ttname"><a href="../../dc/d33/classpanels_1_1_spedizioni.html#a8303525b7537c18f692a4b627edf475c">panels.Spedizioni.model</a></div><div class="ttdeci">SpedizioniTableModel model</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d13/_spedizioni_8java_source.html#l00040">Spedizioni.java:40</a></div></div>
+<div class="ttc" id="aclasspanels_1_1_spedizioni_html_ae7f709656f4578a7e623af4d095a29b2"><div class="ttname"><a href="../../dc/d33/classpanels_1_1_spedizioni.html#ae7f709656f4578a7e623af4d095a29b2">panels.Spedizioni.daoSpedizione</a></div><div class="ttdeci">DaoSpedizione daoSpedizione</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d13/_spedizioni_8java_source.html#l00041">Spedizioni.java:41</a></div></div>
+<div class="ttc" id="aclasstablemodels_1_1_spedizioni_amministratore_table_model_html"><div class="ttname"><a href="../../d9/d57/classtablemodels_1_1_spedizioni_amministratore_table_model.html">tablemodels.SpedizioniAmministratoreTableModel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d1b/_spedizioni_amministratore_table_model_8java_source.html#l00007">SpedizioniAmministratoreTableModel.java:7</a></div></div>
+<div class="ttc" id="aclasstablemodels_1_1_spedizioni_table_model_html_a4bcb16d37dc8bb867fd46000a0321796"><div class="ttname"><a href="../../df/d6b/classtablemodels_1_1_spedizioni_table_model.html#a4bcb16d37dc8bb867fd46000a0321796">tablemodels.SpedizioniTableModel.getData</a></div><div class="ttdeci">Vector&lt; Spedizione &gt; getData()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db9/_spedizioni_table_model_8java_source.html#l00028">SpedizioniTableModel.java:28</a></div></div>
+<div class="ttc" id="aclasstablemodels_1_1_spedizioni_table_model_html_a6b40ba354a2ce735cca3eab363cd76d9"><div class="ttname"><a href="../../df/d6b/classtablemodels_1_1_spedizioni_table_model.html#a6b40ba354a2ce735cca3eab363cd76d9">tablemodels.SpedizioniTableModel.setData</a></div><div class="ttdeci">void setData(Vector&lt; Spedizione &gt; mData)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db9/_spedizioni_table_model_8java_source.html#l00024">SpedizioniTableModel.java:24</a></div></div>
+<div class="ttc" id="aclassthreads_1_1_update_spedizioni_thread_html"><div class="ttname"><a href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html">threads.UpdateSpedizioniThread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d8b/_update_spedizioni_thread_8java_source.html#l00017">UpdateSpedizioniThread.java:17</a></div></div>
+<div class="ttc" id="aclassthreads_1_1_update_spedizioni_thread_html_a5687842dfb2a03d25b8369463cc632f2"><div class="ttname"><a href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html#a5687842dfb2a03d25b8369463cc632f2">threads.UpdateSpedizioniThread.setListener</a></div><div class="ttdeci">void setListener(UpdateSpedizioniThreadListener listener)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d8b/_update_spedizioni_thread_8java_source.html#l00086">UpdateSpedizioniThread.java:86</a></div></div>
+<div class="ttc" id="aclassthreads_1_1_update_spedizioni_thread_html_a99d5823778a7e70326823e18aaacf418"><div class="ttname"><a href="../../df/de8/classthreads_1_1_update_spedizioni_thread.html#a99d5823778a7e70326823e18aaacf418">threads.UpdateSpedizioniThread.terminate</a></div><div class="ttdeci">void terminate()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d8b/_update_spedizioni_thread_8java_source.html#l00082">UpdateSpedizioniThread.java:82</a></div></div>
+<div class="ttc" id="aenumdata_1_1_stato_spedizione_html"><div class="ttname"><a href="../../d6/d38/enumdata_1_1_stato_spedizione.html">data.StatoSpedizione</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/_stato_spedizione_8java_source.html#l00011">StatoSpedizione.java:11</a></div></div>
+<div class="ttc" id="anamespacedata_html"><div class="ttname"><a href="../../d9/da0/namespacedata.html">data</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d15/_cliente_8java_source.html#l00001">Cliente.java:1</a></div></div>
+<div class="ttc" id="anamespacetablemodels_html"><div class="ttname"><a href="../../d9/da8/namespacetablemodels.html">tablemodels</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d68/_colored_row_table_model_8java_source.html#l00001">ColoredRowTableModel.java:1</a></div></div>
+<div class="ttc" id="anamespacethreads_html"><div class="ttname"><a href="../../d5/d58/namespacethreads.html">threads</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d8b/_update_spedizioni_thread_8java_source.html#l00001">UpdateSpedizioniThread.java:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_99a4f1204c936485e0d7b28039c96b73.html">panels</a></li><li class="navelem"><a class="el" href="../../d4/d6d/_spedizioni_amministratore_8java.html">SpedizioniAmministratore.java</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
+  </ul>
+</div>
+</body>
+</html>
